@@ -1,11 +1,11 @@
-﻿using FactoryImplementation.Models.Interfaces;
+﻿using FactoryImplementation.Models.Abstract;
+using FactoryImplementation.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FactoryImplementation.Models {
-    class CV : IDocument {
-        public List<Page> Pages { get; set; } = new List<Page>();
+    class CV : Document {
 
         public CV() : this("No name", "N/A", "N/A", "N/A") { }
 
@@ -22,19 +22,11 @@ namespace FactoryImplementation.Models {
         }
 
         public CV(string personalData, string education, string experience, string skills) {
+            this._type = "CV";
             Pages.Add(new Page("Personal Data", personalData));
             Pages.Add(new Page("Education", education));
             Pages.Add(new Page("Experience", experience));
             Pages.Add(new Page("Skills", skills));
         }
-
-        public void AddPage(Page page) {
-            this.Pages.Add(page);
-        }
-
-        public void AddPage(Page page, int index) {
-            this.Pages.Insert(index, page);
-        }
-
     }
 }
