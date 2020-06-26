@@ -6,6 +6,7 @@ using System;
 namespace FactoryImplementation {
     class Program {
         static void Main(string[] args) {
+
             Console.WriteLine("Hello Factory!");
 
             DocumentCreator cv = new CVCreator();
