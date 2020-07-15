@@ -14,17 +14,14 @@ namespace FactoryImplementation {
 
             DocumentCreator cv = new CVCreator();
             IDocument cvInstance = cv.CreateDocument(mainPrinter);
-            cvInstance.PrintTitle();
             cvInstance.Print();
 
             DocumentCreator report = new ReportCreator();
             IDocument reportInstance = report.CreateDocument(mainPrinter);
-            reportInstance.PrintTitle();
             reportInstance.Print();
 
             DocumentCreator story = new StoryCreator();
             IDocument storyInstance = story.CreateDocument(mainPrinter);
-            storyInstance.PrintTitle();
             storyInstance.Print();
         }
     }

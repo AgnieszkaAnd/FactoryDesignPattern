@@ -9,7 +9,6 @@ namespace FactoryImplementation.Models {
     class CV : Document
     {
 
-
         public CV(IPrinter printer) : this(printer, "No name", "N/A", "N/A", "N/A")
         {
         }
@@ -36,11 +35,6 @@ namespace FactoryImplementation.Models {
             Pages.Add(new Page(printer, "Education", education));
             Pages.Add(new Page(printer, "Experience", experience));
             Pages.Add(new Page(printer, "Skills", skills));
-        }
-
-        public override void PrintTitle()
-        {
-            _printer.Print(this.GetType().ToString().Split(".")[2]);
         }
     }
 }

@@ -10,7 +10,5 @@ namespace FactoryImplementation.Models.Interfaces {
         void AddPage(Page page);
 
         void Print();
-
-        void PrintTitle();
     }
 }
