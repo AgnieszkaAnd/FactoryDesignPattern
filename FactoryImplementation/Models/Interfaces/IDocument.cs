@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace FactoryImplementation.Models.Interfaces {
-    interface IDocument {
-        List<Page> Pages { get; set; }
+    public interface IDocument {
+        List<IPage> Pages { get; set; }
 
-        void AddPage(Page page);
+        void AddPage(IPage page);
 
         void Print();
     }

@@ -5,7 +5,7 @@ using System.Text;
 using FactoryImplementation.View;
 
 namespace FactoryImplementation.Creators.Abstract {
-    abstract class DocumentCreator {
+    public abstract class DocumentCreator {
         public abstract IDocument CreateDocument(IPrinter printer);
     }
 }

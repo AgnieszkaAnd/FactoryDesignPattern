@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace FactoryImplementation.Models {
-    class CV : Document
+    public class CV : Document
     {
 
         public CV(IPrinter printer) : this(printer, "No name", "N/A", "N/A", "N/A")

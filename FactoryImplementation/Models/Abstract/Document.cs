@@ -5,24 +5,24 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace FactoryImplementation.Models.Abstract {
-    abstract class Document : IDocument
+    public abstract class Document : IDocument
     {
         protected IPrinter _printer;
 
-        public List<Page> Pages { get; set; } = new List<Page>();
+        public List<IPage> Pages { get; set; } = new List<IPage>();
 
 
-        public void AddPage(Page page) {
+        public void AddPage(IPage page) {
             this.Pages.Add(page);
         }
 
-        public void AddPage(Page page, int index) {
+        public void AddPage(IPage page, int index) {
             this.Pages.Insert(index, page);
         }
 
         public void Print() {
             _printer.Print(this.GetType().ToString().Split(".")[2]);
-            foreach (Page page in this.Pages) { page.Print(); }
+            foreach (IPage page in this.Pages) { page.Print(); }
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace FactoryImplementation.Models {
-    class Report : Document
+    public class Report : Document
     {
 
         public Report(IPrinter printer) : this(printer, "No name", "No content", DateTime.Now) { }

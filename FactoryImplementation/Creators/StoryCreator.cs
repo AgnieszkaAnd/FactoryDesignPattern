@@ -7,7 +7,7 @@ using System.Text;
 using FactoryImplementation.View;
 
 namespace FactoryImplementation.Creators {
-    class StoryCreator : DocumentCreator {
+    public class StoryCreator : DocumentCreator {
         public override IDocument CreateDocument(IPrinter printer) {
             return new Story(printer);
         }

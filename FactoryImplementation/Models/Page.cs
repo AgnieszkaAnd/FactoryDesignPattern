@@ -1,10 +1,11 @@
-﻿using FactoryImplementation.View;
+﻿using FactoryImplementation.Models.Interfaces;
+using FactoryImplementation.View;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FactoryImplementation.Models {
-    class Page {
+    public class Page : IPage {
         private string _title;
         private string _content;
         private readonly IPrinter _printer;

@@ -7,7 +7,7 @@ using System.Text;
 using FactoryImplementation.View;
 
 namespace FactoryImplementation.Creators {
-    class CVCreator : DocumentCreator {
+    public class CVCreator : DocumentCreator {
         public override IDocument CreateDocument(IPrinter printer) {
             return new CV(printer);
         }

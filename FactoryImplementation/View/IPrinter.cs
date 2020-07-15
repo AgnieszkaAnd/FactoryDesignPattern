@@ -1,5 +1,5 @@
 ﻿namespace FactoryImplementation.View {
-    internal interface IPrinter
+    public interface IPrinter
     {
         void Print(string text);
     }

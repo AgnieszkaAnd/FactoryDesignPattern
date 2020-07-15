@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace FactoryImplementation.Models {
-    class Story : Document
+    public class Story : Document
     {
         public Story(IPrinter printer) : this(printer, "Introduction to place here", "To be defined", "To be continued") { }
 
