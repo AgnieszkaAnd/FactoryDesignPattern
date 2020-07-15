@@ -7,7 +7,6 @@ using System.Text;
 namespace FactoryImplementation.Models.Abstract {
     abstract class Document : IDocument {
 
-        protected string _type;
 
         public List<Page> Pages { get; set; } = new List<Page>();
 
@@ -21,7 +20,7 @@ namespace FactoryImplementation.Models.Abstract {
         }
 
         public void Print() {
-            Printer.Print(this._type);
+            Printer.Print(this.GetType().ToString().Split(".")[2]);
             foreach (Page page in this.Pages) { page.Print(); }
         }
     }

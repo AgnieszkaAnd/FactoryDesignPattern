@@ -17,7 +17,7 @@ namespace FactoryImplementation {
             IDocument reportInstance = report.CreateDocument();
             reportInstance.Print();
 
-            DocumentCreator story = new CVCreator();
+            DocumentCreator story = new StoryCreator();
             IDocument storyInstance = story.CreateDocument();
             storyInstance.Print();
         }

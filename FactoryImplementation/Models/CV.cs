@@ -22,7 +22,6 @@ namespace FactoryImplementation.Models {
         }
 
         public CV(string personalData, string education, string experience, string skills) {
-            this._type = "CV";
             Pages.Add(new Page("Personal Data", personalData));
             Pages.Add(new Page("Education", education));
             Pages.Add(new Page("Experience", experience));

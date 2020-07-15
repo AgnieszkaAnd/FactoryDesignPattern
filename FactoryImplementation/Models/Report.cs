@@ -18,7 +18,6 @@ namespace FactoryImplementation.Models {
         }
 
         public Report(string reportName, string content, DateTime date) {
-            this._type = "Report";
             Pages.Add(new Page("Name", reportName));
             Pages.Add(new Page("Content", content));
             Pages.Add(new Page("Date of generation", date.ToString()));

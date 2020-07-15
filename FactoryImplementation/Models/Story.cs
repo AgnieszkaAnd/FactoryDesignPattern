@@ -18,7 +18,6 @@ namespace FactoryImplementation.Models {
         }
 
         public Story(string introduction, string main, string ending) {
-            this._type = "Story";
             Pages.Add(new Page("Introduction", introduction));
             Pages.Add(new Page("Main Content", main));
             Pages.Add(new Page("Ending", ending));
