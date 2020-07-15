@@ -6,31 +6,41 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace FactoryImplementation.Models {
-    class CV : Document {
+    class CV : Document
+    {
 
-        //private readonly IPrinter _printer;
 
-        public CV(IPrinter printer) : this(printer, "No name", "N/A", "N/A", "N/A") { }
+        public CV(IPrinter printer) : this(printer, "No name", "N/A", "N/A", "N/A")
+        {
+        }
 
         public CV(IPrinter printer, string personalData)
-            : this(printer, personalData, "N/A", "N/A", "N/A") {
+            : this(printer, personalData, "N/A", "N/A", "N/A")
+        {
         }
 
         public CV(IPrinter printer, string personalData, string education)
-            : this(printer, personalData, education, "N/A", "N/A") {
+            : this(printer, personalData, education, "N/A", "N/A")
+        {
         }
 
         public CV(IPrinter printer, string personalData, string education, string experience)
-            : this(printer, personalData, education, experience, "N/A") {
+            : this(printer, personalData, education, experience, "N/A")
+        {
         }
 
         public CV(IPrinter printer, string personalData, string education, string experience, string skills)
         {
             _printer = printer;
-            Pages.Add(new Page("Personal Data", personalData));
-            Pages.Add(new Page("Education", education));
-            Pages.Add(new Page("Experience", experience));
-            Pages.Add(new Page("Skills", skills));
+            Pages.Add(new Page(printer, "Personal Data", personalData));
+            Pages.Add(new Page(printer, "Education", education));
+            Pages.Add(new Page(printer, "Experience", experience));
+            Pages.Add(new Page(printer, "Skills", skills));
+        }
+
+        public override void PrintTitle()
+        {
+            _printer.Print(this.GetType().ToString().Split(".")[2]);
         }
     }
 }

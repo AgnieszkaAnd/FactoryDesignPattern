@@ -24,9 +24,13 @@ namespace FactoryImplementation.Models {
         public Report(IPrinter printer, string reportName, string content, DateTime date)
         {
             _printer = printer;
-            Pages.Add(new Page("Name", reportName));
-            Pages.Add(new Page("Content", content));
-            Pages.Add(new Page("Date of generation", date.ToString()));
+            Pages.Add(new Page(printer, "Name", reportName));
+            Pages.Add(new Page(printer, "Content", content));
+            Pages.Add(new Page(printer, "Date of generation", date.ToString()));
+        }
+
+        public override void PrintTitle() {
+            _printer.Print(this.GetType().ToString().Split(".")[2]);
         }
     }
 }

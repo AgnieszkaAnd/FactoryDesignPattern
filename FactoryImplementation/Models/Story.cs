@@ -24,9 +24,13 @@ namespace FactoryImplementation.Models {
         public Story(IPrinter printer, string introduction, string main, string ending)
         {
             _printer = printer;
-            Pages.Add(new Page("Introduction", introduction));
-            Pages.Add(new Page("Main Content", main));
-            Pages.Add(new Page("Ending", ending));
+            Pages.Add(new Page(printer, "Introduction", introduction));
+            Pages.Add(new Page(printer, "Main Content", main));
+            Pages.Add(new Page(printer, "Ending", ending));
+        }
+
+        public override void PrintTitle() {
+            _printer.Print(this.GetType().ToString().Split(".")[2]);
         }
     }
 }

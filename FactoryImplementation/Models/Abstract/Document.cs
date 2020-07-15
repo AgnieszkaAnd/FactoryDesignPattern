@@ -7,7 +7,7 @@ using System.Text;
 namespace FactoryImplementation.Models.Abstract {
     abstract class Document : IDocument
     {
-        private readonly IPrinter _printer;
+        protected IPrinter _printer;
 
         public List<Page> Pages { get; set; } = new List<Page>();
 
@@ -21,8 +21,9 @@ namespace FactoryImplementation.Models.Abstract {
         }
 
         public void Print() {
-            _printer.Print(this.GetType().ToString().Split(".")[2]);
             foreach (Page page in this.Pages) { page.Print(); }
         }
+
+        public abstract void PrintTitle();
     }
 }

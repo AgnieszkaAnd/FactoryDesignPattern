@@ -7,20 +7,23 @@ namespace FactoryImplementation.Models {
     class Page {
         private string _title;
         private string _content;
+        private readonly IPrinter _printer;
 
-        public Page() : this("No title", "No content") { }
+        public Page(IPrinter printer) : this(printer, "No title", "No content") { }
 
-        public Page(string title) : this(title, "No content") {
+        public Page(IPrinter printer, string title) : this(printer, title, "No content") {
             this._title = title;
         }
 
-        public Page(string title, string content) {
-            this._title = title;
-            this._content = content;
+        public Page(IPrinter printer, string title, string content)
+        {
+            _printer = printer;
+            _title = title;
+            _content = content;
         }
 
         public void Print() {
-            Printer.Print(this._title);
+            _printer.Print(this._title);
         }
     }
 }
