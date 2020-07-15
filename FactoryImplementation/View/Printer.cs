@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace FactoryImplementation.View {
-    static class Printer {
-        public static void Print(string text) {
+    class Printer : IPrinter {
+        public void Print(string text) {
             Console.WriteLine(text);
         }
     }

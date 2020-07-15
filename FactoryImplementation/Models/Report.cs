@@ -1,23 +1,29 @@
 ﻿using FactoryImplementation.Models.Abstract;
 using FactoryImplementation.Models.Interfaces;
+using FactoryImplementation.View;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace FactoryImplementation.Models {
-    class Report : Document {
+    class Report : Document
+    {
 
-        public Report() : this("No name", "No content", DateTime.Now) { }
+        //private readonly IPrinter _printer;
 
-        public Report(string reportName)
-            : this(reportName, "No content", DateTime.Now) {
+        public Report(IPrinter printer) : this(printer, "No name", "No content", DateTime.Now) { }
+
+        public Report(IPrinter printer, string reportName)
+            : this(printer, reportName, "No content", DateTime.Now) {
         }
 
-        public Report(string reportName, string content)
-            : this(reportName, content, DateTime.Now) {
+        public Report(IPrinter printer, string reportName, string content)
+            : this(printer, reportName, content, DateTime.Now) {
         }
 
-        public Report(string reportName, string content, DateTime date) {
+        public Report(IPrinter printer, string reportName, string content, DateTime date)
+        {
+            _printer = printer;
             Pages.Add(new Page("Name", reportName));
             Pages.Add(new Page("Content", content));
             Pages.Add(new Page("Date of generation", date.ToString()));
